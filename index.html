@@ -48,22 +48,23 @@
             }
             async function screenwidth()
             {
-                if (!window.length >= 892)
-                {
-                    document.getElementById("all-content").innerHTML = `
-                        <center>
-                            <font size="7" style="color: #fe2d2d;">
-                                Your Screen Width is Too Small!
-                            </font>
-                            <br>
-                            <font size="3" style="color: #7a7a7a;">
-                                892 Pixels Minimum
-                            </font>
-                        </center>
-                    `;
+                while (true) {
+                    if (!window.length >= 892)
+                    {
+                        document.getElementById("all-content").innerHTML = `
+                            <center>
+                                <font size="7" style="color: #fe2d2d;">
+                                    Your Screen Width is Too Small!
+                                </font>
+                                <br>
+                                <font size="3" style="color: #7a7a7a;">
+                                    892 Pixels Minimum
+                                </font>
+                            </center>
+                        `;
+                    }
+                    await sleep(750);
                 }
-                await sleep(750);
-                screenwidth();
             }
             screenwidth();
         </script>
